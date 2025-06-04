@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'academic_system.academic_management',  # Aplicación de gestión académica
+    'academic_system.students',  # Aplicación de gestión de estudiantes
+    'academic_system.courses',  # Aplicación de gestión de cursos
+    'academic_system.faculty',  # Aplicación de gestión de facultad
+    'academic_system.users',  # Aplicación de gestión de usuarios
 ]
 
 MIDDLEWARE = [
@@ -111,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-ar' 
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Mendoza'
 
 USE_I18N = True
 
