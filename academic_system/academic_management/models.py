@@ -1,18 +1,18 @@
 from django.db import models
 
 # Create your models here.
-class Enrollment(models.Model):
+class Enrollment(models.Model): #esto es un modelo de inscripción
     student = models.ForeignKey('students.Student', on_delete=models.CASCADE)
     course = models.ForeignKey('courses.Course', on_delete=models.CASCADE)
     enrollment_date = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=[('active', 'Activa'), ('withdrawn', 'Retirada')])
 
-class Grade(models.Model):
+class Grade(models.Model): #esto es un modelo de calificación
     enrollment = models.ForeignKey('Enrollment', on_delete=models.CASCADE)
     value = models.DecimalField(max_digits=5, decimal_places=2)
     date_recorded = models.DateField(auto_now_add=True)
 
-class AcademicPeriod(models.Model):
+class AcademicPeriod(models.Model):   #esto es un modelo de periodo académico
     name = models.CharField(max_length=50)  # Ej: "1er Semestre 2025"
     start_date = models.DateField()
     end_date = models.DateField()
