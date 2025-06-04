@@ -1,5 +1,17 @@
 from django.db import models
 
+
+
+DAYS = [
+    ('Monday', 'Lunes'),
+    ('Tuesday', 'Martes'),
+    ('Wednesday', 'Miércoles'),
+    ('Thursday', 'Jueves'),
+    ('Friday', 'Viernes'),
+    ('Saturday', 'Sábado'),
+    ('Sunday', 'Domingo'),
+]
+
 # Create your models here.
 class Enrollment(models.Model): #esto es un modelo de inscripción
     student = models.ForeignKey('students.Student', on_delete=models.CASCADE)
@@ -20,7 +32,7 @@ class AcademicPeriod(models.Model):   #esto es un modelo de periodo académico
 
 class Schedule(models.Model):
     course = models.ForeignKey('courses.Course', on_delete=models.CASCADE)
-    day = models.CharField(max_length=10, choices=[('Monday', 'Lunes'), ('Tuesday', 'Martes'), ...])
+    day = models.CharField(max_length=10, choices=DAYS)
     start_time = models.TimeField()
     end_time = models.TimeField()
     classroom = models.CharField(max_length=30)

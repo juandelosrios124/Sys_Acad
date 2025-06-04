@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'academic_management',  # Aplicación de gestión académica
+    'students',  # Aplicación de gestión de estudiantes
+    'courses',  # Aplicación de gestión de cursos
 ]
 
 MIDDLEWARE = [
