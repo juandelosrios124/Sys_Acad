@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 DAYS = [
     ('Monday', 'Lunes'),
     ('Tuesday', 'Martes'),
@@ -30,14 +29,14 @@ class AcademicPeriod(models.Model):   #esto es un modelo de periodo académico
     end_date = models.DateField()
     is_active = models.BooleanField(default=False)
 
-class Schedule(models.Model):
+class Schedule(models.Model): #esto es un modelo de horario
     course = models.ForeignKey('courses.Course', on_delete=models.CASCADE)
     day = models.CharField(max_length=10, choices=DAYS)
     start_time = models.TimeField()
     end_time = models.TimeField()
     classroom = models.CharField(max_length=30)
 
-class Attendance(models.Model):
+class Attendance(models.Model): #esto es un modelo de asistencia
     enrollment = models.ForeignKey('Enrollment', on_delete=models.CASCADE)
     date = models.DateField()
     status = models.CharField(max_length=10, choices=[('present', 'Presente'), ('absent', 'Ausente')])
